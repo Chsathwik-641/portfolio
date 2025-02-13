@@ -110,9 +110,51 @@ section {
   max-width: 600px;
 }
 .info-box h1 {
-  font-size: 4em;
+  font-size: 2.5rem;
   font-weight: 500;
 }
+
+.reveal-text span {
+  display: inline-block;
+  font-size: 3rem;
+  font-weight: 500;
+  opacity: 0;
+  animation: fallIn 0.8s ease-out forwards;
+}
+
+@keyframes fallIn {
+  0% {
+    transform: translateY(-50px);
+    opacity: 0;
+  } /* Starts hidden above */
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  } /* Falls into place */
+}
+
+.reveal-text span:nth-child(1) {
+  animation-delay: 0s;
+}
+.reveal-text span:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.reveal-text span:nth-child(3) {
+  animation-delay: 0.4s;
+}
+.reveal-text span:nth-child(4) {
+  animation-delay: 0.6s;
+}
+.reveal-text span:nth-child(5) {
+  animation-delay: 0.8s;
+}
+.reveal-text span:nth-child(6) {
+  animation-delay: 1s;
+}
+.reveal-text span:nth-child(7) {
+  animation-delay: 1.2s;
+}
+
 .info-box h3 {
   font-size: 2em;
   font-weight: 400;

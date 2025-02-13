@@ -56,7 +56,16 @@ function App() {
         <img src="/india-gate.jpg" alt="My Image" />
         <div className="info-box">
           <h1>
-            <span>Hello, I'm Sathwik</span>
+            <span>Hello, I'm </span>
+          </h1>
+          <h1 class="reveal-text">
+            <span>S</span>
+            <span>A</span>
+            <span>T</span>
+            <span>H</span>
+            <span>W</span>
+            <span>I</span>
+            <span>K</span>
           </h1>
           <h3>
             <span>Front-end Enthusiast</span>
@@ -240,6 +249,26 @@ function App() {
             </p>
             <img src="/project-1.png" className="Project-img"></img>
             <img src="/project-1.2.jpg" className="Project-img"></img>
+          </div>
+          <div className="box">
+            <div className="project-header">
+              {" "}
+              <h1>
+                <span>Portfolio</span>
+              </h1>
+              <a
+                href="https://github.com/Chsathwik-641/portfolio"
+                target="_blank"
+              >
+                <i class="bx bx-link-external"></i>
+              </a>
+            </div>
+            <p>
+              This portfolio showcases my skills, projects, and expertise in
+              front-end development, React, and API integrations.
+            </p>
+            <img src="/project-3.png" className="Project-img"></img>
+            <img src="/project-3.1.png" className="Project-img"></img>
           </div>
         </div>
       </section>
