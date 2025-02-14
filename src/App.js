@@ -38,7 +38,7 @@ function App() {
     <div>
       <nav className={`navbar ${isScrolled ? "scrolled" : ""}`}>
         <a href="#" className="logo">
-          <span>Sathwik</span>
+          <span>Ch.Sathwik</span>
         </a>
         <ul className={`links ${isOpen ? "active" : ""}`}>
           <a href="#home">Home</a>
@@ -53,7 +53,7 @@ function App() {
         </a>
       </nav>
       <section id="home">
-        <img src="/india-gate.jpg" alt="My Image" />
+        <img src="/website-welcome.gif" alt="My Image" />
         <div className="info-box">
           <h1>
             <span>Hello, I'm </span>
@@ -200,7 +200,7 @@ function App() {
             </ul>
           </div>
         </div>
-        <img src="/skills.jpg" alt="skills" className=""></img>
+        <img src="/skills.webp" alt="skills" className=""></img>
       </section>
       <section id="project">
         <h1 className="header">
