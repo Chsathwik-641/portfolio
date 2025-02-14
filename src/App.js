@@ -38,7 +38,7 @@ function App() {
     <div>
       <nav className={`navbar ${isScrolled ? "scrolled" : ""}`}>
         <a href="#" className="logo">
-          <span>Ch.Sathwik</span>
+          <span>Sathwik</span>
         </a>
         <ul className={`links ${isOpen ? "active" : ""}`}>
           <a href="#home">Home</a>
