@@ -55,17 +55,17 @@ function App() {
       <section id="home">
         <img src="/website-welcome.gif" alt="My Image" />
         <div className="info-box">
-          <h1>
+          <h3>
             <span>Hello, I'm </span>
-          </h1>
+          </h3>
           <h1 class="reveal-text">
             <span>S</span>
-            <span>A</span>
-            <span>T</span>
-            <span>H</span>
-            <span>W</span>
-            <span>I</span>
-            <span>K</span>
+            <span>a</span>
+            <span>t</span>
+            <span>h</span>
+            <span>w</span>
+            <span>i</span>
+            <span>k</span>
           </h1>
           <h3>
             <span>Front-end Enthusiast</span>
@@ -207,12 +207,12 @@ function App() {
           <span>Projects</span>
         </h1>
         <div className="projects-container">
-          <div className="box">
+          <div className="project-box">
             <div className="project-header">
               {" "}
-              <h1>
+              <h3>
                 <span>Food Recipe</span>
-              </h1>
+              </h3>
               <a
                 href="https://github.com/Chsathwik-641/Food-App"
                 target="_blank"
@@ -229,12 +229,12 @@ function App() {
             <img src="/project-2.1.png" className="Project-img"></img>
           </div>
 
-          <div className="box">
+          <div className="project-box">
             <div className="project-header">
               {" "}
-              <h1>
+              <h3>
                 <span>Weather app</span>
-              </h1>
+              </h3>
               <a
                 href="https://github.com/Chsathwik-641/WeatherApp"
                 target="_blank"
@@ -250,12 +250,12 @@ function App() {
             <img src="/project-1.png" className="Project-img"></img>
             <img src="/project-1.2.jpg" className="Project-img"></img>
           </div>
-          <div className="box">
+          <div className="project-box">
             <div className="project-header">
               {" "}
-              <h1>
+              <h3>
                 <span>Portfolio</span>
-              </h1>
+              </h3>
               <a
                 href="https://github.com/Chsathwik-641/portfolio"
                 target="_blank"
@@ -278,7 +278,7 @@ function App() {
         </h1>
         <div className="resume-container">
           <button onClick={handleDownload} className="btn">
-            Download Resume <i class="bx bxs-download"></i>
+            Download<i class="bx bxs-download"></i>
           </button>
         </div>
       </div>
