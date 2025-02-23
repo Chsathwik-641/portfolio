@@ -1,21 +1,92 @@
 import "./App.css";
 import React, { useState, useEffect } from "react";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 function App() {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
 
   useEffect(() => {
+    const handleResize = () => setIsMobile(window.innerWidth <= 768);
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
       setIsVisible(window.scrollY > 300);
     };
 
+    handleResize();
+    handleScroll();
+
+    window.addEventListener("resize", handleResize);
     window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+      window.removeEventListener("scroll", handleScroll);
+    };
   }, []);
 
+  const projects = [
+    {
+      id: 1,
+      heading: "Food App",
+      link: "https://github.com/Chsathwik-641/Food-App",
+      para: `The app fetches recipes and nutritional information using the
+  Edamam and Nutritionix APIs, allowing users to explore a wide
+  variety of meal options and nutritional details.`,
+      image: ["/project-2.png", "/project-2.1.png"],
+    },
+    {
+      id: 2,
+      heading: "Weather App",
+      link: "https://github.com/Chsathwik-641/WeatherApp",
+      para: `The app fetches real-time weather data using the Visual Crossing
+              Weather API, providing accurate and up-to-date weather information
+              based on the user's location.`,
+      image: ["/project-1.png", "/project-1.2.jpg"],
+    },
+    {
+      id: 3,
+      heading: "Portfolio",
+      link: "https://github.com/Chsathwik-641/portfolio",
+      para: ` This portfolio showcases my skills, projects, and expertise in
+              front-end development, React, and API integrations.`,
+      image: ["/project-3.png", "/project-3.1.png"],
+    },
+  ];
+
+  const NextArrow = (props) => {
+    const { onClick } = props;
+    return (
+      <i
+        className="bx bx-chevron-right custom-arrow next"
+        onClick={onClick}
+      ></i>
+    );
+  };
+
+  const PrevArrow = (props) => {
+    const { onClick } = props;
+    return (
+      <i className="bx bx-chevron-left custom-arrow prev" onClick={onClick}></i>
+    );
+  };
+  const sliderSettings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    arrows: !isMobile,
+    swipe: isMobile,
+    autoplay: false,
+    autoplaySpeed: 4000,
+    nextArrow: <NextArrow />,
+    prevArrow: <PrevArrow />,
+  };
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
@@ -113,7 +184,7 @@ function App() {
       <section id="about">
         <div className="about-box">
           <div className="about-info">
-            <h1>
+            <h1 className="header">
               <span>About Me</span>
             </h1>
             <p>
@@ -203,75 +274,49 @@ function App() {
         <img src="/skills.webp" alt="skills" className=""></img>
       </section>
       <section id="project">
-        <h1 className="header">
-          <span>Projects</span>
-        </h1>
-        <div className="projects-container">
-          <div className="project-box">
-            <div className="project-header">
-              {" "}
-              <h3>
-                <span>Food Recipe</span>
-              </h3>
-              <a
-                href="https://github.com/Chsathwik-641/Food-App"
-                target="_blank"
-              >
-                <i class="bx bx-link-external"></i>
-              </a>
-            </div>
-            <p>
-              The app fetches recipes and nutritional information using the
-              Edamam and Nutritionix APIs, allowing users to explore a wide
-              variety of meal options and nutritional details.
-            </p>
-            <img src="/project-2.png" className="Project-img"></img>
-            <img src="/project-2.1.png" className="Project-img"></img>
-          </div>
+        <div className="project-box">
+          <h1 className="header">
+            <span>Projects</span>
+          </h1>
 
-          <div className="project-box">
-            <div className="project-header">
-              {" "}
-              <h3>
-                <span>Weather app</span>
-              </h3>
-              <a
-                href="https://github.com/Chsathwik-641/WeatherApp"
-                target="_blank"
-              >
-                <i class="bx bx-link-external"></i>
-              </a>
-            </div>
-            <p>
-              The app fetches real-time weather data using the Visual Crossing
-              Weather API, providing accurate and up-to-date weather information
-              based on the user's location.
-            </p>
-            <img src="/project-1.png" className="Project-img"></img>
-            <img src="/project-1.2.jpg" className="Project-img"></img>
-          </div>
-          <div className="project-box">
-            <div className="project-header">
-              {" "}
-              <h3>
-                <span>Portfolio</span>
-              </h3>
-              <a
-                href="https://github.com/Chsathwik-641/portfolio"
-                target="_blank"
-              >
-                <i class="bx bx-link-external"></i>
-              </a>
-            </div>
-            <p>
-              This portfolio showcases my skills, projects, and expertise in
-              front-end development, React, and API integrations.
-            </p>
-            <img src="/project-3.png" className="Project-img"></img>
-            <img src="/project-3.1.png" className="Project-img"></img>
+          <div className="projects-container">
+            <Slider {...sliderSettings}>
+              {projects.map((project) => (
+                <div key={project.id} className="project-card">
+                  <div className="project-headers">
+                    <span>
+                      <h2 className="project-heading">{project.heading}</h2>
+                    </span>
+                    <a
+                      href={project.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="project-link"
+                    >
+                      <i className="bx bx-link-external"></i>
+                    </a>
+                  </div>
+                  <p className="project-para">{project.para}</p>
+
+                  <div className="project-images">
+                    <img
+                      src={project.image[0]}
+                      alt={`${project.heading} screenshot 1`}
+                      className="project-image"
+                    />
+                    <img
+                      src={project.image[1]}
+                      alt={`${project.heading} screenshot 2`}
+                      className="project-image"
+                    />
+                  </div>
+                </div>
+              ))}
+            </Slider>
           </div>
         </div>
       </section>
+
       <div id="resume">
         <h1 className="header">
           <span>Resume</span>
