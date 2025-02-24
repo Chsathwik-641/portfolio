@@ -313,48 +313,61 @@ section {
   justify-content: center;
   align-items: center;
   text-align: center;
+  /* border: 1px solid white; */
 }
 
 .project-card {
   background-color: var(--background);
   padding: 5%;
+  position: relative;
   border-radius: 10px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
   margin-bottom: 10px;
   transition: transform 0.3s ease;
+  /* border: 1px solid white; */
 }
 
 .project-headers {
   font-size: 1.7em;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: center;
   align-items: center;
+  padding: 1%;
+  /* border: 1px solid red; */
 }
 
 .project-headers i {
+  position: absolute;
+  top: 10px;
+  right: 10px;
   color: #ff6347;
   transition: 0.5s ease-in-out;
 }
 
+.project-header h2 {
+  margin: 0 auto;
+}
 .project-headers i:hover {
   color: #dc143c;
   transform: scale(1.5);
 }
 
-.project-para {
+#project .project-card .project-para {
   color: white;
   font-size: 1em;
   padding: 1% 0;
+  display: block;
 }
-
-.project-images {
+.project-card .project-images {
   display: flex;
   gap: 10px;
+  justify-content: center;
   padding: 1% 0;
 }
 
 .project-image {
   width: 50%;
+  height: auto;
   object-fit: cover;
   border-radius: 10px;
   transition: transform 0.3s ease;
@@ -674,14 +687,11 @@ form textarea {
     padding: 0.5em 1em;
   }
 
+  form input,
   form textarea {
-    font-size: 1.2em;
-    padding: 1em;
-    border-radius: 0.5em;
-    border: none;
-    outline: none;
-    resize: none;
-    width: 100%;
+    font-size: 1em;
+    padding: 0.7em 1.5em;
+    max-width: 350px;
   }
 
   #resume .header {
