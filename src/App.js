@@ -56,6 +56,13 @@ function App() {
               front-end development, React, and API integrations.`,
       image: ["/project-3.png", "/project-3.1.png"],
     },
+    {
+      id: 4,
+      heading: "Hospital Website",
+      link: "https://github.com/Chsathwik-641/Hosipital-website",
+      para: `Developed a hospital website using React, Express.js, and MySQL, allowing patients to book appointments and doctors to manage schedules efficiently.`,
+      image: ["/project-4.1.png", "/project-4.2.png"],
+    },
   ];
 
   const NextArrow = (props) => {
