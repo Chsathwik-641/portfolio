@@ -64,6 +64,22 @@ function App() {
       image: ["/project-4.1.png", "/project-4.2.png"],
     },
   ];
+  const skills = [
+    { id: 1, image: "/logo512.png", name: "React" },
+    { id: 2, image: "/java script.png", name: "JavaScript" },
+    { id: 3, image: "/html-5.png", name: "HTML" },
+    { id: 4, image: "/css-3.png", name: "CSS" },
+    { id: 5, image: "/java.png", name: "Java" },
+    { id: 6, image: "/python.png", name: "Python" },
+    { id: 7, image: "/nodejs.png", name: "Node.js" },
+    { id: 8, image: "/mysql.png", name: "MySQL" },
+    { id: 9, image: "/data.png", name: "Data Structures" },
+    { id: 10, image: "/bootstrap.png", name: "Bootstrap" },
+    { id: 11, image: "/programming.png", name: "OOPS" },
+  ];
+  const handleLinkClick = () => {
+    toggleMenu();
+  };
 
   const NextArrow = (props) => {
     const { onClick } = props;
@@ -119,44 +135,23 @@ function App() {
           <span>Sathwik</span>
         </a>
         <ul className={`links ${isOpen ? "active" : ""}`}>
-          <a href="#home">Home</a>
-          <a href="#about">About</a>
-          <a href="#project">Projects</a>
-          <a href="#resume">Resume</a>
-          <a href="#contact">Contact</a>
+          <a href="#home" onClick={handleLinkClick}>
+            Home
+          </a>
+          <a href="#about" onClick={handleLinkClick}>
+            About
+          </a>
+          <a href="#project" onClick={handleLinkClick}>
+            Projects
+          </a>
+          <a href="#resume" onClick={handleLinkClick}>
+            Resume
+          </a>
+          <a href="#contact" onClick={handleLinkClick}>
+            Contact
+          </a>
         </ul>
-        <i class="bx bx-menu-alt-right" id="menu" onClick={toggleMenu}></i>
-        <a href="#contact" className="btn">
-          Contact Me
-        </a>
-      </nav>
-      <section id="home">
-        <img src="/website-welcome.gif" alt="My Image" />
-        <div className="info-box">
-          <h3>
-            <span>Hello, I'm </span>
-          </h3>
-          <h1 class="reveal-text">
-            <span>S</span>
-            <span>a</span>
-            <span>t</span>
-            <span>h</span>
-            <span>w</span>
-            <span>i</span>
-            <span>k</span>
-          </h1>
-          <h3>
-            <span>Front-end Enthusiast</span>
-          </h3>
-          <p>
-            I love bringing designs to life and creating seamless experiences
-            for users. I am continuously learning and staying up-to-date with
-            the latest trends in web development to enhance my skills and
-            deliver high-quality projects.
-          </p>
-        </div>
-
-        <div className="profile">
+        <div className="nav-profile">
           <a
             href="https://www.linkedin.com/in/sathwik-ch-79195a1a1"
             target="_blank"
@@ -177,6 +172,33 @@ function App() {
           >
             <i class="bx bxl-gmail"></i>
           </a>
+        </div>
+        <i class="bx bx-menu-alt-right" id="menu" onClick={toggleMenu}></i>
+      </nav>
+      <section id="home">
+        <img src="/website-welcome.gif" alt="My Image" />
+        <div className="info-box">
+          <h3>
+            <span>Hello, I'm </span>
+          </h3>
+          <h1 class="reveal-text">
+            <span>S</span>
+            <span>a</span>
+            <span>t</span>
+            <span>h</span>
+            <span>w</span>
+            <span>i</span>
+            <span>k</span>
+          </h1>
+          <h3>
+            <span>Full-Stack Web Devlopment Enthusiast</span>
+          </h3>
+          <p>
+            I love bringing designs to life and creating seamless experiences
+            for users. I am continuously learning and staying up-to-date with
+            the latest trends in web development to enhance my skills and
+            deliver high-quality projects.
+          </p>
         </div>
       </section>
 
@@ -201,7 +223,9 @@ function App() {
               building dynamic, single-page applications. Additionally, I am
               skilled in Java, Python, working with APIs, integrating
               third-party services to enhance app functionality, and using MySQL
-              for database management. I am always eager to learn new
+              for database management. I am currently expanding my skill set by
+              learning back-end development as well, specifically focusing on
+              Node.js and Express.js. I am always eager to learn new
               technologies and tools to stay at the forefront of web
               development.
             </p>
@@ -210,75 +234,18 @@ function App() {
             <span>Skills</span>
           </h2>
           <div className="skills">
-            <ul>
-              <li>
-                <span>
-                  {" "}
-                  <i class="bx bxs-chevron-right"></i>JAVA
-                </span>
-              </li>
-              <li>
-                <span>
-                  {" "}
-                  <i class="bx bxs-chevron-right"></i>PYTHON
-                </span>
-              </li>
-              <li>
-                <span>
-                  {" "}
-                  <i class="bx bxs-chevron-right"></i>JAVASCRIPT
-                </span>
-              </li>
-              <li>
-                <span>
-                  {" "}
-                  <i class="bx bxs-chevron-right"></i>REACTJS
-                </span>
-              </li>
-            </ul>
-            <ul>
-              <li>
-                <span>
-                  {" "}
-                  <i class="bx bxs-chevron-right"></i>NODEJS
-                </span>
-              </li>
-              <li>
-                <span>
-                  {" "}
-                  <i class="bx bxs-chevron-right"></i>MySQL
-                </span>
-              </li>
-              <li>
-                <span>
-                  {" "}
-                  <i class="bx bxs-chevron-right"></i>HTML
-                </span>
-              </li>
-              <li>
-                <span>
-                  {" "}
-                  <i class="bx bxs-chevron-right"></i>CSS
-                </span>
-              </li>
-            </ul>
-            <ul>
-              <li>
-                <span>
-                  {" "}
-                  <i class="bx bxs-chevron-right"></i>DSA
-                </span>
-              </li>
-              <li>
-                <span>
-                  {" "}
-                  <i class="bx bxs-chevron-right"></i>OOPS
-                </span>
-              </li>
-            </ul>
+            {skills.map((skill, index) => (
+              <div
+                className="skill-card"
+                key={skill.id}
+                style={{ animationDelay: `${index * 0.3}s` }}
+              >
+                {skill.image && <img src={skill.image} alt={skill.name} />}
+                <p>{skill.name}</p>
+              </div>
+            ))}
           </div>
         </div>
-        <img src="/skills.webp" alt="skills" className=""></img>
       </section>
       <section id="project">
         <div className="project-box">
@@ -334,36 +301,26 @@ function App() {
           </button>
         </div>
       </div>
-      <section id="contact">
-        <div className="cta-section">
-          <h2>Let's Build Something Amazing Together! 🚀</h2>
-          <p>
-            Whether you have a project in mind, a collaboration opportunity, or
-            just want to chat, feel free to reach out!
-          </p>
+      <div id="contact">
+        <h2 className="header">
+          <span>Get in touch</span>
+        </h2>
+        <div className="linkss">
+          <a href="https://www.instagram.com/sathwik__ch/" target="_blank">
+            <i class="bx bxl-instagram"></i>
+          </a>
+          <a href="https://www.facebook.com/sathwik.chepyala/" target="_blank">
+            <i class="bx bxl-facebook-circle"></i>
+          </a>
         </div>
-        <form>
-          <div className="input-box">
-            <span>Full Name</span>
-            <input type="text" placeholder="Enter your name" />
-          </div>
-          <div className="input-box">
-            <span>Email</span>
-            <input type="text" placeholder="Enter your Email" />
-          </div>
-          <div className="input-box">
-            <span>Message</span>
-            <textarea
-              id="message"
-              name="message"
-              rows="5"
-              cols="25"
-              placeholder="Type your message here..."
-            ></textarea>
-          </div>
-          <div className="btn">Submit</div>
-        </form>
-      </section>
+        <a
+          href="mailto:ch.sathwik.chepyala@gmail.com"
+          target="_blank"
+          title="ch.sathwik.chepyala@gmail.com"
+        >
+          <p className="email">ch.sathwik.chepyala@gmail.com</p>
+        </a>
+      </div>
       <footer className="thanks-section">
         <h2>
           <span>
@@ -371,6 +328,10 @@ function App() {
           </span>
         </h2>
         <p>Have a great day! 🌟</p>
+        <p className="copyright">
+          {" "}
+          © {new Date().getFullYear()} Sathwik Chepyala. All rights reserve
+        </p>
       </footer>
     </div>
   );
