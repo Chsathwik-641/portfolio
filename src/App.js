@@ -122,7 +122,7 @@ function App() {
   };
   const handleDownload = () => {
     const link = document.createElement("a");
-    link.href = "/Sathwik1.pdf";
+    link.href = "/SathwikCh.pdf";
     link.download = "Sathwik_Chepyala_Resume.pdf";
     document.body.appendChild(link);
     link.click();
